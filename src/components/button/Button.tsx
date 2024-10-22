@@ -10,8 +10,8 @@ const Button = ({children, variant} : ButtonProps) => {
                 return styles.filled;
             case 'outline':
                 return styles.outline;
-            default:
-                return styles.default
+            case 'primary':
+                return styles.primary;
         }
     }) ();
 

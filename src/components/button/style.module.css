@@ -29,10 +29,15 @@
     border-color: #000; 
 }
 
-.default {
+.primary {
     background-color: transparent;
     color: #007bff;
-    border: none;
+    border: 1px solid #007bff;
+}
+
+.primary:hover {
+    background-color: #007bff;
+    color: white;
 }
 
 .icon {

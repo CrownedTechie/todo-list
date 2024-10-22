@@ -7,5 +7,5 @@ export type ContainerProps = {
 
 export type ButtonProps = {
     children: ReactNode,
-    variant: 'filled' | 'outline';
+    variant: 'filled' | 'outline' | 'primary';
 };

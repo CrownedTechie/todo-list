@@ -1,6 +1,8 @@
 import "./App.css";
-import { Button, Container } from "./components";
+import { Button, Container, ListItem } from "./components";
 import { IoAddSharp, IoFilterSharp } from "react-icons/io5";
+import { GrTask } from "react-icons/gr";
+
 
 function App() {
 
@@ -8,7 +10,7 @@ function App() {
     <>
       <Container>
         <header> 
-          <h1>TO-DO</h1>
+          <h1>TO-DO <GrTask /></h1>
           <p>SEARCH BAR BTN</p>
           <p className="welcome-message">WHAT'S UP, CHINENYE!</p>
         </header>
@@ -29,7 +31,8 @@ function App() {
           </div>
 
           
-          <ul>
+          <ul className="task-list">
+            <ListItem />
             <li>TODO LIST 1</li>
             <li>TODO LIST 1</li>
           </ul>
