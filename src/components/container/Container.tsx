@@ -1,9 +1,5 @@
 import styles from "./style.module.css";
-import { type ReactNode } from "react";
-
-type ContainerProps = {
-    children: ReactNode
-};
+import { ContainerProps } from "../types";
 
 
 const Container = ({children} : ContainerProps) => {
@@ -12,6 +8,6 @@ const Container = ({children} : ContainerProps) => {
             {children}
         </div>
      );
-}
+};
  
 export default Container;

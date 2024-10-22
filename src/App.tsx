@@ -1,5 +1,6 @@
 import "./App.css";
-import Container from "./components/container/Container";
+import { Button, Container } from "./components";
+import { IoAddSharp, IoFilterSharp } from "react-icons/io5";
 
 function App() {
 
@@ -16,8 +17,15 @@ function App() {
 
         <section className="task-section">
           <div className="task-actions">
-            <button>NEW TASK</button>
-            <button>FILTERS</button>
+            <Button variant="filled">
+              <IoAddSharp />
+              New Task
+            </Button>
+
+            <Button variant="outline">
+              <IoFilterSharp />
+              Filters
+            </Button>
           </div>
 
           
