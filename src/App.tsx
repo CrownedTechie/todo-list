@@ -33,8 +33,7 @@ function App() {
           
           <ul className="task-list">
             <ListItem />
-            <li>TODO LIST 1</li>
-            <li>TODO LIST 1</li>
+            <ListItem />
           </ul>
         </section>
       </Container>
