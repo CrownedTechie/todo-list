@@ -12,20 +12,23 @@ interface TodoProps {
 
 const TodoList = () => {
     const [todos, setTodos] = useState<TodoProps[]>([]);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            
-                const response = await api.get('/todos?limit=5');
+            try {
+                const response = await api.get('/todos?limit=2');
                 const dummyTodos = response.data?.todos;
                 setTodos(dummyTodos); 
-            
+            } catch (error) {
+                setError('Failed to fetch todos')
+            }
         }
     
         fetchData();
     }, []);
 
-    
+    if (error) return <h1>{error}</h1>
 
     return ( 
         <>

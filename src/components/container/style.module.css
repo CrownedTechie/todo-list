@@ -2,7 +2,7 @@
     max-width: 1100px;
     background-color: white;
     margin: 0 auto;
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     border-left: 1px solid black;
