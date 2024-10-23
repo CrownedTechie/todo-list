@@ -9,3 +9,7 @@ export type ButtonProps = {
     children: ReactNode,
     variant: 'filled' | 'outline' | 'primary';
 };
+
+export type ListItemProps = {
+    item: string;
+};

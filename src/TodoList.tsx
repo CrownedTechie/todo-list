@@ -1,19 +1,13 @@
 import { useEffect, useState } from "react";
 import { api } from "./api/axios";
 import { ListItem } from "./components";
-
-interface TodoProps {
-    id: number;
-    todo: string;
-    completed: boolean;
-    userId: number;
-    category?: string;
-};
+import { TodoProps } from "./types";
 
 const TodoList = () => {
     const [todos, setTodos] = useState<TodoProps[]>([]);
     const [error, setError] = useState<string | null>(null);
 
+    //* Fetching the todos and catching error
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -22,12 +16,14 @@ const TodoList = () => {
                 setTodos(dummyTodos); 
             } catch (error) {
                 setError('Failed to fetch todos')
+                console.error(error)
             }
         }
     
         fetchData();
     }, []);
 
+    //* Handling error 
     if (error) return <h1>{error}</h1>
 
     return ( 

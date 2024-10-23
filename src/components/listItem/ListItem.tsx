@@ -1,10 +1,7 @@
 import styles from './style.module.css';
 import { LuDelete } from "react-icons/lu";
 import { Button } from "../index";
-
-type ListItemProps = {
-    item: string;
-};
+import { ListItemProps } from '../types';
 
 const ListItem = ({item}: ListItemProps ) => {
     return ( 
