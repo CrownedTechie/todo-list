@@ -2,12 +2,16 @@ import styles from './style.module.css';
 import { LuDelete } from "react-icons/lu";
 import { Button } from "../index";
 
-const ListItem = () => {
+type ListItemProps = {
+    item: string;
+};
+
+const ListItem = ({item}: ListItemProps ) => {
     return ( 
         <li className={styles.li}>
             <div className={styles.div1}>
                 <input type="checkbox" name="" id="" />
-                Go to bed
+                {item}
             </div>
             
 
