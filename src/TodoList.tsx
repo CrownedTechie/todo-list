@@ -1,9 +1,8 @@
-import {  useContext } from "react";
 import { ListItem } from "./components";
-import { TodoContext } from "./context/TodoContext";
+import { useTodo } from "./hooks/TodoHook";
 
 const TodoList = () => {
-    const { todos } = useContext(TodoContext);  // Access todos from context
+    const { todos } = useTodo();  // Access todos from context
 
     return ( 
         <>

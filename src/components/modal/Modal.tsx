@@ -1,14 +1,14 @@
-import { FormEvent, useContext, useState } from "react";
+import { FormEvent, useState } from "react";
 import styles from "./style.module.css";
 import { TodoProps } from "../../types";
-import { TodoContext } from "../../context/TodoContext";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { useModal } from "../../hooks/ModalHook";
+import { useTodo } from "../../hooks/TodoHook";
 
 const Modal = () => {
     const [ todoText, setTodoText ] = useState<string>('');
     const { isModalOpen, closeModal } = useModal();
-    const { addTodo } = useContext(TodoContext); // Access addTodo from context
+    const { addTodo } = useTodo(); // Access addTodo from context
 
     const handleAddClick = (e:FormEvent) => {
         e.preventDefault();
@@ -23,6 +23,8 @@ const Modal = () => {
         addTodo(newTodo);
 
         setTodoText("");
+        
+        closeModal();
     };
 
 
