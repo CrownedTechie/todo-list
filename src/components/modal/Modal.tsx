@@ -2,19 +2,15 @@ import { FormEvent, useContext, useState } from "react";
 import styles from "./style.module.css";
 import { TodoProps } from "../../types";
 import { TodoContext } from "../../context/TodoContext";
+import { ModalProps } from "../types";
 
-// interface ModalProps {
-//     refetchTodos: () => void;  // Prop to refresh todos in TodoList
-// }
-
-
-const Modal = () => {
+const Modal = ({isModal} : ModalProps) => {
     const [ todoText, setTodoText ] = useState<string>('');
     const { addTodo } = useContext(TodoContext); // Access addTodo from context
 
     const handleAddClick = (e:FormEvent) => {
         e.preventDefault();
-        
+
         // Create a new todo object
         const newTodo: TodoProps = {
             id: Date.now(),
@@ -29,6 +25,8 @@ const Modal = () => {
 
   return (
     <>
+    {
+        isModal ? (
         <div className={styles.modalOverlay} aria-modal="true" role="dialog">
             <div className={styles.modalBackground}></div>
 
@@ -50,6 +48,9 @@ const Modal = () => {
                 </form>
             </div>
         </div>
+        ) : null
+    }
+        
 
     </>
   )

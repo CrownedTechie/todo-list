@@ -8,8 +8,13 @@ export type ContainerProps = {
 export type ButtonProps = {
     children: ReactNode,
     variant: 'filled' | 'outline' | 'primary';
+    handleClick?: () => void;
 };
 
 export type ListItemProps = {
     item: string;
+};
+
+export interface ModalProps {
+    isModal: boolean
 };

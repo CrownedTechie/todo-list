@@ -2,7 +2,7 @@ import styles from "./style.module.css";
 import { ButtonProps } from "../types";
 
 
-const Button = ({children, variant} : ButtonProps) => {
+const Button = ({children, variant, handleClick} : ButtonProps) => {
 
     const variantClass = (() => {
         switch(variant) {
@@ -17,7 +17,7 @@ const Button = ({children, variant} : ButtonProps) => {
 
 
     return ( 
-        <button  className={`${styles.button} ${variantClass}`}>
+        <button onClick={handleClick}  className={`${styles.button} ${variantClass}`}>
             <span className={styles.icon}>
                 {children}
             </span>
