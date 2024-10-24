@@ -14,7 +14,7 @@ export const TodoContext = createContext<TodoContextProps>({
 });
 
 
-const TodoProvider = ({ children }: { children: ReactNode }) => {
+export const TodoProvider = ({ children }: { children: ReactNode }) => {
     const [todos, setTodos] = useState<TodoProps[]>([]);
 
     // Function to add a new todo
@@ -40,5 +40,3 @@ const TodoProvider = ({ children }: { children: ReactNode }) => {
         </TodoContext.Provider>
     );
 };
- 
-export default TodoProvider;
