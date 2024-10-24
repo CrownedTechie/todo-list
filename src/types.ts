@@ -5,3 +5,9 @@ export interface TodoProps {
     userId: number;
     category?: string;
 };
+
+export interface CategoryProps {
+    id: number;
+    name: string;
+    color: string;
+};

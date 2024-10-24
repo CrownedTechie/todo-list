@@ -4,7 +4,7 @@ const Modal = () => {
   return (
     <>
         <div className={styles.modalOverlay} aria-modal="true" role="dialog">
-            <div className={styles.modalBackground} ></div>
+            <div className={styles.modalBackground}></div>
 
             <div className={styles.modalContent}>
                 <form action="" className={styles.modalForm}>
