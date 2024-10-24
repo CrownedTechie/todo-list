@@ -10,7 +10,6 @@ const ListItem = ({item}: ListItemProps ) => {
                 <input type="checkbox" name="" id="" />
                 {item}
             </div>
-            
 
             <div className={styles.div2}>
                 <Button variant='primary'>Mark Complete</Button>

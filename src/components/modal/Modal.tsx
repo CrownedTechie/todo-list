@@ -1,26 +1,28 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import styles from "./style.module.css";
 import { TodoProps } from "../../types";
-import { storage } from "../../utils/storage";
+import { TodoContext } from "../../context/TodoContext";
+
+// interface ModalProps {
+//     refetchTodos: () => void;  // Prop to refresh todos in TodoList
+// }
 
 
 const Modal = () => {
     const [ todoText, setTodoText ] = useState<string>('');
-    const [todos, setTodos] = useState<TodoProps[]>([]);
+    const { addTodo } = useContext(TodoContext); // Access addTodo from context
 
     const handleAddClick = (e:FormEvent) => {
         e.preventDefault();
-
+        
         // Create a new todo object
         const newTodo: TodoProps = {
             id: Date.now(),
-            todo: todoText,
+            item: todoText,
             category: "Uncategorized",
         };
-        // Update todos
-        const updatedTodos = [...todos, newTodo];
-        storage.setTodos(updatedTodos);
-        setTodos(updatedTodos);
+        
+        addTodo(newTodo);
 
         setTodoText("");
     };

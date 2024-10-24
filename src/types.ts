@@ -1,6 +1,6 @@
 export interface TodoProps {
     id: number;
-    todo: string;
+    item: string;
     completed?: boolean;
     userId?: number;
     category?: string;

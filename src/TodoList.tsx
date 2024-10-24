@@ -1,44 +1,19 @@
-import { useEffect, useState } from "react";
-import { api } from "./api/axios";
+import {  useContext } from "react";
 import { ListItem } from "./components";
-import { TodoProps } from "./types";
-import { storage } from "./utils/storage";
+import { TodoContext } from "./context/TodoContext";
 
 const TodoList = () => {
-    const [todos, setTodos] = useState<TodoProps[]>([]);
-    const [error, setError] = useState<string | null>(null);
-
-    //* Fetching the todos from the api and catching error
-    useEffect(() => {
-        const localTodos = storage.getTodos();
-
-        if (localTodos.length > 0) {
-            setTodos(localTodos);
-        } else {
-            const fetchData = async () => {
-                try {
-                    const response = await api.get('/todos?limit=2');
-                    const dummyTodos = response.data?.todos;
-                    setTodos(dummyTodos); 
-                } catch (error) {
-                    setError('Failed to fetch todos')
-                    console.error(error)
-                }
-            }
-            fetchData();
-        }
-        
-
-    }, []);
-
-    //* Handling error 
-    if (error) return <h1>{error}</h1>
+    const { todos } = useContext(TodoContext);  // Access todos from context
 
     return ( 
         <>
-            {todos.map((todo) => (
-                <ListItem key={todo.id} item={todo.todo} />
-            ))}
+            {todos.length === 0 ? (
+                <p>No todos available</p>
+            ) : (
+                todos.map((todo) => (
+                <ListItem key={todo.id} item={todo.item} />
+                ))
+            )}
         </>
      );
 };
