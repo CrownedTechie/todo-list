@@ -1,8 +1,9 @@
 import "./App.css";
-import { Button, Container } from "./components";
+import { Button, Container, Modal } from "./components";
 import { IoAddSharp, IoFilterSharp } from "react-icons/io5";
 import { GrTask } from "react-icons/gr";
 import TodoList from "./TodoList";
+import { AddTodoForm } from "./AddToDoForm";
 
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
            <TodoList />
           </ul>
         </section>
+
+        <Modal />
       </Container>
     </>
   )
