@@ -5,13 +5,11 @@ import { storage } from "../utils/storage";
 interface TodoContextProps {
     todos: TodoProps[];
     addTodo: (newTodo: TodoProps) => void;
+    deleteTodo: (id: number ) => void;
 }
 
 // Create a context with default values
-export const TodoContext = createContext<TodoContextProps>({
-    todos: [],
-    addTodo: () => {},
-});
+export const TodoContext = createContext<TodoContextProps | undefined>(undefined);
 
 
 export const TodoProvider = ({ children }: { children: ReactNode }) => {
@@ -33,9 +31,16 @@ export const TodoProvider = ({ children }: { children: ReactNode }) => {
         
         getTodo();
     }, [])
+
+    // Function to delete a todo 
+    const deleteTodo = (id: number) => {
+        const updatedTodos = todos.filter(todo => todo.id !== id);
+        storage.setTodos(updatedTodos);
+        setTodos(updatedTodos);
+    };
     
     return ( 
-        <TodoContext.Provider value={{ todos, addTodo }}>
+        <TodoContext.Provider value={{ todos, addTodo, deleteTodo }}>
             {children}
         </TodoContext.Provider>
     );

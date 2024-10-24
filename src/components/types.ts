@@ -13,6 +13,7 @@ export type ButtonProps = {
 
 export type ListItemProps = {
     item: string;
+    handleDelete: () => void;
 };
 
 export interface ModalProps {

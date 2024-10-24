@@ -2,7 +2,7 @@ import { ListItem } from "./components";
 import { useTodo } from "./hooks/TodoHook";
 
 const TodoList = () => {
-    const { todos } = useTodo();  // Access todos from context
+    const { todos, deleteTodo } = useTodo();  // Access todos from context
 
     return ( 
         <>
@@ -10,7 +10,7 @@ const TodoList = () => {
                 <p>No todos available</p>
             ) : (
                 todos.map((todo) => (
-                <ListItem key={todo.id} item={todo.item} />
+                    <ListItem key={todo.id} item={todo.item} handleDelete={() => deleteTodo(todo.id)} />
                 ))
             )}
         </>

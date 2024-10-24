@@ -3,7 +3,7 @@ import { LuDelete } from "react-icons/lu";
 import { Button } from "../index";
 import { ListItemProps } from '../types';
 
-const ListItem = ({item}: ListItemProps ) => {
+const ListItem = ({item, handleDelete}: ListItemProps ) => {
     return ( 
         <li className={styles.li}>
             <div className={styles.div1}>
@@ -13,7 +13,7 @@ const ListItem = ({item}: ListItemProps ) => {
 
             <div className={styles.div2}>
                 <Button variant='primary'>Mark Complete</Button>
-                <LuDelete />
+                <LuDelete onClick={handleDelete} />
             </div>
            
         </li>
