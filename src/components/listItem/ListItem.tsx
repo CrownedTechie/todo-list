@@ -16,7 +16,7 @@ const ListItem = ({item, handleDelete, handleComplete, isComplete}: ListItemProp
             </div>
 
             <div className={styles.div2}>
-                <Button handleClick={handleComplete} variant='primary'>Mark Complete</Button>
+                <Button handleClick={handleComplete} variant='primary'>{isComplete ? "Completed" : "Mark Complete"}</Button>
                 <LuDelete onClick={handleDelete} />
             </div>
            

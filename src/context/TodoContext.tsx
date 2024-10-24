@@ -43,7 +43,7 @@ export const TodoProvider = ({ children }: { children: ReactNode }) => {
     //Function to mark Todo complete
     const markTodoComplete = (id: number) => {
         const updatedTodos = todos.map((todo) => 
-            todo.id === id ? {...todo, completed: true} : todo
+            todo.id === id ? {...todo, completed: !todo.completed} : todo
         )
         setTodos(updatedTodos);
         storage.setTodos(updatedTodos);
