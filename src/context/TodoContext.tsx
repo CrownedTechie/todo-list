@@ -6,6 +6,7 @@ interface TodoContextProps {
     todos: TodoProps[];
     addTodo: (newTodo: TodoProps) => void;
     deleteTodo: (id: number ) => void;
+    markTodoComplete: (id: number) => void;
 }
 
 // Create a context with default values
@@ -38,9 +39,18 @@ export const TodoProvider = ({ children }: { children: ReactNode }) => {
         storage.setTodos(updatedTodos);
         setTodos(updatedTodos);
     };
+
+    //Function to mark Todo complete
+    const markTodoComplete = (id: number) => {
+        const updatedTodos = todos.map((todo) => 
+            todo.id === id ? {...todo, completed: true} : todo
+        )
+        setTodos(updatedTodos);
+        storage.setTodos(updatedTodos);
+    };
     
     return ( 
-        <TodoContext.Provider value={{ todos, addTodo, deleteTodo }}>
+        <TodoContext.Provider value={{ todos, addTodo, deleteTodo, markTodoComplete }}>
             {children}
         </TodoContext.Provider>
     );

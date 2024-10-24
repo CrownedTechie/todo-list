@@ -22,6 +22,11 @@
     height: 1rem;
 }
 
+.div1.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
 .div2 svg {
     color: red;
     font-size: 1.4rem;

@@ -18,6 +18,7 @@ const Modal = () => {
             id: Date.now(),
             item: todoText,
             category: "Uncategorized",
+            completed: false
         };
         
         addTodo(newTodo);

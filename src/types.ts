@@ -1,7 +1,7 @@
 export interface TodoProps {
     id: number;
     item: string;
-    completed?: boolean;
+    completed: boolean;
     userId?: number;
     category?: string;
 };

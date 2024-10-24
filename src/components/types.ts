@@ -13,7 +13,9 @@ export type ButtonProps = {
 
 export type ListItemProps = {
     item: string;
+    isComplete: boolean;
     handleDelete: () => void;
+    handleComplete: () => void;
 };
 
 export interface ModalProps {
