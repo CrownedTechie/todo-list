@@ -11,3 +11,8 @@ export interface CategoryProps {
     name: string;
     color: string;
 };
+
+export interface TodoListProps {
+    term: string;
+    todoCompleted: boolean | undefined;
+};

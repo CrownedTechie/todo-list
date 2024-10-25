@@ -51,3 +51,9 @@
     width: 1rem;
     height: 1rem;
 }
+
+@media (max-width: 395px) {
+    .button {
+        font-size: .75rem;
+    }
+}

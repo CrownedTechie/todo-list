@@ -4,5 +4,4 @@ import ListItem from "./listItem/ListItem";
 import Modal from "./modal/Modal";
 import SearchBar from "./searchBar/SearchBar";
 
-
 export { Container, Button, ListItem, Modal, SearchBar };

@@ -1,9 +1,10 @@
 import { ListItem } from "./components";
 import { useTodo } from "./hooks/TodoHook";
+import { TodoListProps } from "./types";
 import { searchTodos } from "./utils/searchTodos";
 import { sortTodos } from "./utils/sortTodos";
 
-const TodoList = ({term, todoCompleted}: {term: string; todoCompleted: boolean | undefined}) => {
+const TodoList = ({term, todoCompleted}: TodoListProps) => {
     const { todos, deleteTodo, markTodoComplete } = useTodo();  // Access todos from custom hook 
 
     const filteredTodos = searchTodos(todos, term).filter(todo => {

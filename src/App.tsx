@@ -12,11 +12,9 @@ function App() {
   const [ searchTerm, setSearchTerm ] = useState<string>('');
   const [completeStatus, setCompleteStatus] = useState<boolean | undefined>(undefined);
 
-
   const handleSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
-
 
   return (
     <>

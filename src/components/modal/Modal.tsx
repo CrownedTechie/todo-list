@@ -13,7 +13,7 @@ const Modal = () => {
     const handleAddClick = (e:FormEvent) => {
         e.preventDefault();
 
-        // Create a new todo object
+        // To create a new todo object
         const newTodo: TodoProps = {
             id: Date.now(),
             item: todoText,
