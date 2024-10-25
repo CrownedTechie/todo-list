@@ -28,7 +28,7 @@ function App() {
             <div className="task-actions">
               <Button handleClick={openModal} variant="filled">
                 <IoAddSharp />
-                New Task
+                New Todo
               </Button>
               <Button handleClick={() => setCompleteStatus(undefined)} variant="outline" >
                 All
