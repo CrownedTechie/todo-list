@@ -1,42 +1,55 @@
 import "./App.css";
-import { Button, Container, ListItem } from "./components";
-import { IoAddSharp, IoFilterSharp } from "react-icons/io5";
+import { Button, Container, Modal, SearchBar } from "./components";
+import { IoAddSharp } from "react-icons/io5";
 import { GrTask } from "react-icons/gr";
+import TodoList from "./TodoList";
+import { useModal } from "./hooks/ModalHook";
+import { useState } from "react";
 
 
 function App() {
+  const { openModal } = useModal();
+  const [ searchTerm, setSearchTerm ] = useState<string>('');
+  const [completeStatus, setCompleteStatus] = useState<boolean | undefined>(undefined);
+
+  const handleSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
 
   return (
     <>
       <Container>
-        <header> 
-          <h1>TO-DO <GrTask /></h1>
-          <p>SEARCH BAR BTN</p>
-          <p className="welcome-message">WHAT'S UP, CHINENYE!</p>
-        </header>
+          <header> 
+            <h1>TO-DO <GrTask /></h1>
+            <SearchBar  searchValue={searchTerm} handleSearch={handleSearchValue} />
+          </header>
 
-        <section>CATEGORIES</section>
+          <main className="task-section">
+            <div className="task-actions">
+              <Button handleClick={openModal} variant="filled">
+                <IoAddSharp />
+                New Task
+              </Button>
+              <Button handleClick={() => setCompleteStatus(undefined)} variant="outline" >
+                All
+              </Button>
 
-        <section className="task-section">
-          <div className="task-actions">
-            <Button variant="filled">
-              <IoAddSharp />
-              New Task
-            </Button>
+              <Button handleClick={() => setCompleteStatus(true)} variant="outline" >
+                Completed
+              </Button>
 
-            <Button variant="outline">
-              <IoFilterSharp />
-              Filters
-            </Button>
-          </div>
+              <Button handleClick={() => setCompleteStatus(false)} variant="outline">
+                Incomplete
+              </Button>
+            </div>
+            
+            <ul className="task-list">
+              <TodoList term={searchTerm} todoCompleted={completeStatus} />
+            </ul>
+          </main>
 
-          
-          <ul className="task-list">
-            <ListItem />
-            <ListItem />
-          </ul>
-        </section>
-      </Container>
+          <Modal />
+        </Container>
     </>
   )
 }

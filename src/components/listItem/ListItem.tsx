@@ -1,19 +1,23 @@
 import styles from './style.module.css';
 import { LuDelete } from "react-icons/lu";
 import { Button } from "../index";
+import { ListItemProps } from '../types';
 
-const ListItem = () => {
+const ListItem = ({item, handleDelete, handleComplete, isComplete}: ListItemProps ) => {
     return ( 
-        <li className={styles.li}>
-            <div className={styles.div1}>
-                <input type="checkbox" name="" id="" />
-                Go to bed
+        <li className={`${styles.li}  `}>
+            <div className={`${styles.div1} ${isComplete ? styles.completed : null} `}>
+                <input 
+                    type="checkbox"  
+                    checked={isComplete}
+                    onChange={handleComplete}
+                />
+                {item}
             </div>
-            
 
             <div className={styles.div2}>
-                <Button variant='primary'>Mark Complete</Button>
-                <LuDelete />
+                <Button handleClick={handleComplete} variant='primary'>{isComplete ? "Completed" : "Mark Complete"}</Button>
+                <LuDelete onClick={handleDelete} />
             </div>
            
         </li>
