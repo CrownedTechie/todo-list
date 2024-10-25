@@ -12,7 +12,6 @@ interface TodoContextProps {
 // Create a context with default values
 export const TodoContext = createContext<TodoContextProps | undefined>(undefined);
 
-
 export const TodoProvider = ({ children }: { children: ReactNode }) => {
     const [todos, setTodos] = useState<TodoProps[]>([]);
 
@@ -48,7 +47,7 @@ export const TodoProvider = ({ children }: { children: ReactNode }) => {
         setTodos(updatedTodos);
         storage.setTodos(updatedTodos);
     };
-    
+
     return ( 
         <TodoContext.Provider value={{ todos, addTodo, deleteTodo, markTodoComplete }}>
             {children}

@@ -40,7 +40,7 @@ h1 svg {
     margin-top: 1.25rem;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .task-list {

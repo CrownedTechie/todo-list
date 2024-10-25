@@ -3,10 +3,15 @@ import { useTodo } from "./hooks/TodoHook";
 import { searchTodos } from "./utils/searchTodos";
 import { sortTodos } from "./utils/sortTodos";
 
-const TodoList = ({term}: {term: string}) => {
+const TodoList = ({term, todoCompleted}: {term: string; todoCompleted: boolean | undefined}) => {
     const { todos, deleteTodo, markTodoComplete } = useTodo();  // Access todos from custom hook 
 
-    const filteredTodos = searchTodos(todos, term);
+    const filteredTodos = searchTodos(todos, term).filter(todo => {
+        if (todoCompleted === true) return todo.completed;
+        if (todoCompleted === false) return !todo.completed;
+        return true;
+    });
+
     const sortedTodos = sortTodos(filteredTodos);
 
     return ( 
