@@ -27,7 +27,7 @@ This is a common tool that allows users to write down their goals, experiences o
 6. __Sorting and Searching__ You can sort your todos based on completed or incomplete status and also search for a todo easily.
 
 ## My Process
-Rather than using custom hooks for state management in such a simple project, I went with context API (my first time using it) to practicalize what I've been learning. 
+Rather than using react hooks for state management in such a simple project, I went with context API (my first time using it) to practicalize what I've been learning. 
 
 ### Technologies Used: 
 + HTML
