@@ -20,8 +20,8 @@
 
 .outline {
     background-color: transparent;
-    color: #000;
-    border: .09rem solid #666;
+    color: #585757;
+    border: 1px solid #aaa;
 }
 
 .outline:hover {

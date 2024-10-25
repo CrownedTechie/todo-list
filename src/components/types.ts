@@ -21,3 +21,8 @@ export type ListItemProps = {
 export interface ModalProps {
     isModal: boolean
 };
+
+export interface SearchBarProps {
+    searchValue: string;
+    handleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};

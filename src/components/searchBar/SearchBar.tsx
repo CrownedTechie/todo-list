@@ -1,16 +1,16 @@
+import { SearchBarProps } from "../types";
 import styles from "./style.module.css";
 import { FcSearch } from "react-icons/fc";
 
-
-const SearchBar = () => {
+const SearchBar = ({searchValue, handleSearch} : SearchBarProps) => {
     return ( 
         <div className={styles.searchBox}>
             <input
             type="text"
             className={styles.searchBar}
             placeholder="Search tasks..."
-            // value={searchTerm}
-            // onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchValue}
+            onChange={handleSearch}
             />
 
             <FcSearch />

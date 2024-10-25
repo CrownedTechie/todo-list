@@ -4,20 +4,23 @@ import { IoAddSharp, IoFilterSharp } from "react-icons/io5";
 import { GrTask } from "react-icons/gr";
 import TodoList from "./TodoList";
 import { useModal } from "./hooks/ModalHook";
+import { useState } from "react";
 
 
 function App() {
   const { openModal } = useModal();
+  const [ searchTerm, setSearchTerm ] = useState<string>('');
+
+  const handleSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
 
   return (
     <>
       <Container>
           <header> 
             <h1>TO-DO <GrTask /></h1>
-           
-            <SearchBar />
-           
-            <p className="welcome-message">WHAT'S UP, CHINENYE!</p>
+            <SearchBar  searchValue={searchTerm} handleSearch={handleSearchValue} />
           </header>
 
           <section>CATEGORIES</section>
@@ -36,7 +39,7 @@ function App() {
             </div>
             
             <ul className="task-list">
-            <TodoList />
+              <TodoList term={searchTerm} />
             </ul>
           </section>
 
