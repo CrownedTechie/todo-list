@@ -9,19 +9,19 @@
 }
 
 .filled {
-    background-color: #3B40D5;
+    background-color: #007bff;
     color: white;
-    border: none;
+    border: 1px solid #007bff;
 }
 
 .filled:hover {
-    background-color: #2a2fc2; 
+    background-color: #1f73cc;
 }
 
 .outline {
     background-color: transparent;
-    color: #000;
-    border: .09rem solid #666;
+    color: #585757;
+    border: 1px solid #aaa;
 }
 
 .outline:hover {
@@ -50,4 +50,10 @@
 .icon svg {
     width: 1rem;
     height: 1rem;
+}
+
+@media (max-width: 395px) {
+    .button {
+        font-size: .75rem;
+    }
 }

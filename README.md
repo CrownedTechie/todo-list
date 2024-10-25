@@ -1,50 +1,45 @@
-# React + TypeScript + Vite
+# TYPESCRIPT TODO LIST APP
+This project was built with Vite. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
 
-Currently, two official plugins are available:
+- [Introduction](#introduction)
+- [Features](#features)
+- [My Process](#my-process)
+  - [Technologies Used](#technologies-used)
+- [Live Site Link](#live-site-link)
+- [My Socials](#my-socials)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Introduction
+This is a common tool that allows users to write down their goals, experiences or achievements they would like to accomplish in a laidback and easygoing way. 
 
-## Expanding the ESLint configuration
+## Features
+1. __List Display:__ Explore all the items on your todo list, quickly checking and reviewing all the listed items.
+    
+2. __Add New Lists:__ You can use an add button (represented by an `New Task`) to include new items to your list.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+3. __Achievement Tracking:__ Mark items on your todo list as completed once you've completed them. If you accidentally marked an item, it's easy to unmark them.
 
-- Configure the top-level `parserOptions` property like this:
+4. __User-friendly Interface:__ Explore a clean and simple interface that's all about keeping things straightforward. It's easy to move around and interact with it.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+5. __Data Storage:__ Your list stays intact even if you close and reopen the app, unless you choose to delete it voluntarily.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+6. __Sorting and Searching__ You can sort your todos based on completed or incomplete status and also search for a todo easily.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## My Process
+Rather than using react hooks for state management in such a simple project, I went with context API (my first time using it) to practicalize what I've been learning. 
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Technologies Used: 
++ HTML
++ Modular CSS
++ React typescript
++ Context API
++ React Icons
+
+## Live Site Link
++ [Typescript Todo List App by CrownedTechie](https://crownedtechie.github.io/simple-bucket-list-app/)
+
+## My Socials
++ __Email:__ nenchi00@gmail.com
++ __X:__ [CrownedTechie](https://x.com/CrownedTechie?t=xh4cpYyjSLOD_WWgN-R-Ag&s=09)
++ __LinkedIn:__ [Chinenye U. Agu](https://www.linkedin.com/in/chinenye-u-agu-53b715193?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
