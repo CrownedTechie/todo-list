@@ -37,7 +37,7 @@ Rather than using react hooks for state management in such a simple project, I w
 + React Icons
 
 ## Live Site Link
-+ [Typescript Todo List App by CrownedTechie](https://crownedtechie.github.io/simple-bucket-list-app/)
++ [Typescript Todo List App by CrownedTechie](https://todolist-omega-topaz.vercel.app/)
 
 ## My Socials
 + __Email:__ nenchi00@gmail.com
