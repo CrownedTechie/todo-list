@@ -1,7 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  /* font-weight: 400; */
   background-color: #f4f4f5;
 
 
@@ -31,28 +30,6 @@ h1 {
     font-weight: bold;
     color: #333;
 }
-
-.search-box {
-    display: flex;
-    border: 1px solid #aaa;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 1.5rem;
-    padding: .5rem 1rem;
-}
-
-.search-bar {
-    width: 80%;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-}
-
-.search-box svg {
-    width: 30px;
-    height: 30px;
-}
-
 
 .welcome-message {
     margin-top: 1.25rem;

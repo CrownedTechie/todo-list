@@ -1,11 +1,10 @@
 import "./App.css";
-import { Button, Container, Modal } from "./components";
+import { Button, Container, Modal, SearchBar } from "./components";
 import { IoAddSharp, IoFilterSharp } from "react-icons/io5";
 import { GrTask } from "react-icons/gr";
 import TodoList from "./TodoList";
 import { useModal } from "./hooks/ModalHook";
 
-import { FcSearch } from "react-icons/fc";
 
 function App() {
   const { openModal } = useModal();
@@ -15,19 +14,8 @@ function App() {
       <Container>
           <header> 
             <h1>TO-DO <GrTask /></h1>
-            {/* <p>SEARCH BAR BTN</p> */}
-
-            <div className="search-box">
-              <input
-                type="text"
-                className="search-bar"
-                placeholder="Search tasks..."
-                // value={searchTerm}
-                // onChange={(e) => setSearchTerm(e.target.value)}
-              />
-
-              <FcSearch />
-            </div>
+           
+            <SearchBar />
            
             <p className="welcome-message">WHAT'S UP, CHINENYE!</p>
           </header>

@@ -1,0 +1,21 @@
+.searchBox {
+    display: flex;
+    border: 1px solid #aaa;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1.5rem;
+    padding: .5rem 1rem;
+    margin-top: 1rem;
+}
+
+.searchBar {
+    width: 80%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.searchBox svg {
+    width: 30px;
+    height: 30px;
+}
