@@ -1,17 +1,18 @@
 import { ListItem } from "./components";
 import { useTodo } from "./hooks/TodoHook";
+import { sortTodos } from "./utils/sortTodos";
 
 const TodoList = () => {
     const { todos, deleteTodo, markTodoComplete } = useTodo();  // Access todos from context
 
-    const sortedTodos = [...todos].sort((a, b) => a.completed ? 1 : -1);
+    const sortedTodos = sortTodos(todos);
 
     return ( 
         <>
             {todos.length === 0 ? (
                 <p>No todos available</p>
             ) : (
-                todos.map((todo) => (
+                sortedTodos.map((todo) => (
                     <ListItem 
                         key={todo.id} 
                         item={todo.item} 
